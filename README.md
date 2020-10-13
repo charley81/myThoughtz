@@ -1,3 +1,3 @@
-# myThoughts
+# myThoughtz
 
-> Personal site/blog built with Gatsby
+> Personal site/blog built with a gangsta Gatsby twist
