@@ -1,18 +1,26 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.com/docs/gatsby-config/
- */
-
 module.exports = {
-  /* Your site config here */
+  siteMetadata: {
+    title: "myThoughtz",
+    description:
+      "A personal site/blog when I can express myself, write articles, and have fun",
+    author: "Chris Harley",
+  },
   plugins: [
     `gatsby-plugin-emotion`,
+    `gatsby-plugin-react-helmet`,
     {
-      resolve: 'gatsby-plugin-web-font-loader',
+      resolve: "gatsby-plugin-web-font-loader",
       options: {
         google: {
-          families: ['Architects Daughter', 'cursive'],
+          families: ["Architects Daughter", "cursive"],
+        },
+      },
+    },
+    {
+      resolve: "gatsby-mdx",
+      options: {
+        defaultLayouts: {
+          default: require.resolve("./src/component/layout.js"),
         },
       },
     },
