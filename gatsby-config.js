@@ -9,18 +9,18 @@ module.exports = {
     `gatsby-plugin-emotion`,
     `gatsby-plugin-react-helmet`,
     {
-      resolve: "gatsby-plugin-web-font-loader",
+      resolve: "gatsby-plugin-mdx",
       options: {
-        google: {
-          families: ["Architects Daughter", "cursive"],
+        defaultLayouts: {
+          default: require.resolve("./src/component/layout.js"),
         },
       },
     },
     {
-      resolve: "gatsby-mdx",
+      resolve: "gatsby-plugin-web-font-loader",
       options: {
-        defaultLayouts: {
-          default: require.resolve("./src/component/layout.js"),
+        google: {
+          families: ["Architects Daughter", "cursive"],
         },
       },
     },
