@@ -1,8 +1,12 @@
-import React, { Children } from "react"
+import React from "react"
 import { Global, css } from "@emotion/core"
 import Header from "./header"
+import { Helmet } from "react-helmet"
+import useSiteMetadata from "../hooks/use-sitemetadata"
 
-export default function layout({ children }) {
+export default function Layout({ children }) {
+  const { title, description, author } = useSiteMetadata()
+
   return (
     <>
       <Global
@@ -33,7 +37,7 @@ export default function layout({ children }) {
             background: var(--light);
             font-family: "Architects Daughter", cursive;
             letter-spacing: 2px;
-            font-size: 14px;
+            font-size: 18px;
             line-height: 1.4;
           }
 
@@ -61,6 +65,11 @@ export default function layout({ children }) {
         `}
       />
       <Header />
+      <Helmet>
+        <html lang="en" />
+        <title>{title}</title>
+        <meta name={description} content={description} author={author} />
+      </Helmet>
       <main
         css={css`
           margin: 2rem auto 4rem;
