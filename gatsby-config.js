@@ -10,7 +10,6 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-
     {
       resolve: "gatsby-plugin-mdx",
       options: {
@@ -40,6 +39,15 @@ module.exports = {
       options: {
         name: "images",
         path: "images",
+      },
+    },
+    {
+      resolve: "gatsby-plugin-webpack-bundle-analyzer",
+      options: {
+        production: true,
+        disable: !process.env.ANALYZE_BUNDLE_SIZE,
+        generateStatsFile: true,
+        analyzerMode: "static",
       },
     },
   ],
